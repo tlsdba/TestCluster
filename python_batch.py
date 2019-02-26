@@ -74,7 +74,7 @@ def gen_script_for_each_xml(ite,root_path, built_binary_path, gen_scripts_path, 
     elif str(ite) in running:
         print('Running Script ' + str(ite) + '!')
     else:
-        print('Test Run!')
+        subprocess_cmd('cd ' + root_path + '/' + sub_path + '; sbatch run.sh;')
 
     # print(sub_path)
 
