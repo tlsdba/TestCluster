@@ -69,6 +69,8 @@ def gen_script_for_each_xml(ite,root_path, built_binary_path, gen_scripts_path, 
 
     running = find_running()
 
+    print(root_path + '/' + sub_path)
+
     if os.path.exists(root_path + '/' + result_path + str(ite)):
         print('Dataset Generated!')
     elif str(ite) in running:
