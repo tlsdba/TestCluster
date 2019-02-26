@@ -48,26 +48,24 @@ def gen_script_for_each_xml(ite,root_path, built_binary_path, gen_scripts_path, 
     sub_path = gen_scripts_path + '/' + str(ite)
     mkdir(root_path + '/' + sub_path)
 
-    if os.path.exists(sub_path + '/run.sh'):
-        print('Detected Script: ' + root_path + '/' + sub_path + '/run.sh')
-    else:
-        print('Generating Script: ' + root_path + '/' + sub_path + '/run.sh')
+    
+    print('Generating Script: ' + root_path + '/' + sub_path + '/run.sh')
 
-        f = open(root_path + '/' + sub_path + '/run.sh', 'w')
+    f = open(root_path + '/' + sub_path + '/run.sh', 'w')
 
-        script = '#!/bin/bash\n'
-        script += '#SBATCH --job-name=' + str(ite) + '\n'
-        script += '#SBATCH --cpus-per-task=2\n'
-        script += '#SBATCH --time=10-00:00:00\n'
-        script += '#SBATCH --output=%x.out\n'
-        script += '#SBATCH --error=%x.err\n'
-        script += '#SBATCH --ntasks=1\n'
-        script += '#SBATCH --mem=1G\n'
-        script += root_path +'/' + built_binary_path + ' '
-        script += str(ite) + '\n'
+    script = '#!/bin/bash\n'
+    script += '#SBATCH --job-name=' + str(ite) + '\n'
+    script += '#SBATCH --cpus-per-task=2\n'
+    script += '#SBATCH --time=10-00:00:00\n'
+    script += '#SBATCH --output=%x.out\n'
+    script += '#SBATCH --error=%x.err\n'
+    script += '#SBATCH --ntasks=1\n'
+    script += '#SBATCH --mem=1G\n'
+    script += root_path +'/' + built_binary_path + ' '
+    script += str(ite) + '\n'
 
-        f.write(script)
-        f.close()
+    f.write(script)
+    f.close()
 
     running = find_running()
 
