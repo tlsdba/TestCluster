@@ -54,13 +54,16 @@ def gen_script_for_each_xml(ite,root_path, built_binary_path, gen_scripts_path, 
     f = open(root_path + '/' + sub_path + '/run.sh', 'w')
 
     script = '#!/bin/bash\n'
-    script += '#SBATCH --job-name=' + str(ite) + '\n'
-    script += '#SBATCH --cpus-per-task=2\n'
-    script += '#SBATCH --time=10-00:00:00\n'
-    script += '#SBATCH --output=%x.out\n'
-    script += '#SBATCH --error=%x.err\n'
-    script += '#SBATCH --ntasks=1\n'
-    script += '#SBATCH --mem=1G\n'
+    #script += '#SBATCH --job-name=' + str(ite) + '\n'
+    #script += '#SBATCH --cpus-per-task=2\n'
+    #script += '#SBATCH --time=10-00:00:00\n'
+    #script += '#SBATCH --output=%x.out\n'
+    #script += '#SBATCH --error=%x.err\n'
+    #script += '#SBATCH --ntasks=1\n'
+    #script += '#SBATCH --mem=1G\n'
+    script += '#SBATCH -t 1\n'
+    script += '#SBATCH -n 4\n'
+    script += '#SBATCH --mem-per-cpu=128\n'
     script += root_path +'/' + built_binary_path + ' '
     script += str(ite) + '\n'
 
