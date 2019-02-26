@@ -1,4 +1,4 @@
-import os,random,transforms3d,math,re,sys,subprocess
+import os,random,math,re,sys,subprocess
 from shutil import copyfile
 import numpy as np
 import argparse
