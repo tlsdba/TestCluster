@@ -64,7 +64,7 @@ def gen_script_for_each_xml(ite,root_path, built_binary_path, gen_scripts_path, 
         script += '#SBATCH --ntasks=1\n'
         script += '#SBATCH --mem=1G\n'
 
-	script += root_path + '/' + built_binary_path + ' ' + str(ite) + ' ' + '\n\n'
+	script += root_path + '/' + built_binary_path + ' ' + str(ite) + '\n\n'
 
         f.write(script)
         f.close()
