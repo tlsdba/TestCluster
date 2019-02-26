@@ -75,8 +75,6 @@ def gen_script_for_each_xml(ite,root_path, built_binary_path, gen_scripts_path, 
         print('Dataset Generated!')
     elif str(ite) in running:
         print('Running Script ' + str(ite) + '!')
-    elif not testRun:
-        subprocess_cmd('cd ' + root_path + '/' + sub_path + '; sbatch run.sh;')
     else:
         print('Test Run!')
 
