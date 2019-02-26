@@ -103,7 +103,7 @@ def gen_all_scripts( root_path, built_binary_path, gen_scripts_path, final_resul
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=os.path.basename(__file__))
     parser.add_argument('--root_path',default=os.path.dirname(os.path.realpath(__file__)))
-    parser.add_argument('--built_binary_path',default='build/Testcluster')
+    parser.add_argument('--built_binary_path',default='build/TestCluster')
     parser.add_argument('--gen_scripts_path',default='batch')
     parser.add_argument('--final_result_path',default='output')
     args = parser.parse_args()
