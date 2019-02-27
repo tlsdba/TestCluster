@@ -95,7 +95,7 @@ def gen_all_scripts( root_path, built_binary_path, gen_scripts_path, final_resul
         os.mkdir(root_path + '/' + final_result_path)
 
     # for i in range(len(xml_file_list)):
-    for i in range(10):
+    for i in range(5):
         gen_script_for_each_xml(i, root_path,built_binary_path,
                                 gen_scripts_path, final_result_path)
 
